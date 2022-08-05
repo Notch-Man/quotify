@@ -16,9 +16,12 @@
 </main>
 
 <style>
+  :root {
+    --cardYMargin: 20px;
+  }
   .card {
-    margin-right: 50px;
-    margin-left: 50px;
+    margin-right: var(--cardYMargin);
+    margin-left: var(--cardYMargin);
     cursor: pointer;
     transition: 0.5s ease-in-out;
   }
