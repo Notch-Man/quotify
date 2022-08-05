@@ -22,14 +22,16 @@
     cursor: pointer;
     transition: 0.5s ease-in-out;
   }
-  .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
-  }
   h3 {
     font-size: 25pt;
+    transition: 1s;
   }
   p {
     font-weight: 600;
+  }
+  @media only screen and (max-width: 600px) {
+    h3 {
+      font-size: 21pt;
+    }
   }
 </style>
