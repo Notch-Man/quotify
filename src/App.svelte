@@ -5,13 +5,14 @@
   import axios from "axios";
   import gradient from "random-gradient";
 
-  let quote;
+  let quote, bgradient;
   let isLoading = false;
   let endpoint = "https://api.quotable.io/random";
 
   async function getQuote() {
     isLoading = true;
     const res = await axios.get(endpoint);
+    bgradient = gradient(crypto.randomUUID());
     quote = res.data;
     isLoading = false;
   }
@@ -19,7 +20,7 @@
   onMount(() => {
     getQuote();
   });
-  $: console.log(quote);
+  $: console.log(quote, bgradient);
 </script>
 
 <main>
@@ -34,7 +35,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
   />
 
-  <div class="content bg">
+  <div class="content bg" style="background: {bgradient}">
     <QuoteCard quote={quote?.content} author={quote?.author} />
 
     <button
