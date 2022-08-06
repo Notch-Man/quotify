@@ -12,12 +12,13 @@
   async function getQuote() {
     isLoading = true;
     const res = await axios.get(endpoint);
-    bgradient = gradient(crypto.randomUUID());
     quote = res.data;
     isLoading = false;
   }
 
   onMount(() => {
+    bgradient = gradient(crypto.randomUUID());
+
     getQuote();
   });
   $: console.log(quote, bgradient);
