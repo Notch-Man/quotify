@@ -7,7 +7,7 @@
 
   let quote, bgradient;
   let isLoading = false;
-  let endpoint = "https://api.quotable.io/random";
+  const endpoint = "https://api.quotable.io/random";
 
   async function getQuote() {
     isLoading = true;
